@@ -11,4 +11,6 @@ void start_watch(DigitalStopWatch *w);
 
 void stop_watch(DigitalStopWatch *w);
 
+void pause_watch(DigitalStopWatch *w, int seconds);
+
 #endif // DIGITALSTOPWATCH_H

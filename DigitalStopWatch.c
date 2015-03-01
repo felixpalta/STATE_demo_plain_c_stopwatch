@@ -41,3 +41,10 @@ void stop_watch(DigitalStopWatch *w)
 
     w->state.stop_action(&w->state);
 }
+
+void pause_watch(DigitalStopWatch *w, int seconds)
+{
+    assert(w != NULL);
+
+    w->state.pause_action(&w->state, seconds);
+}

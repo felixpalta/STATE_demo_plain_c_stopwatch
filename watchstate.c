@@ -15,8 +15,14 @@ in the concrete state. */
     printf("Error: START event is not supported in this state.\n");
 }
 
+static void default_pause_action(WatchState *state, int seconds)
+{
+    printf("Error: PAUSE event is not supported in this state.\n");
+}
+
 void watch_state_set_default_actions(WatchState *state)
 {
     state->start_action = default_start_action;
     state->stop_action = default_stop_action;
+    state->pause_action = default_pause_action;
 }
