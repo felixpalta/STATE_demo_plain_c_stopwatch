@@ -32,6 +32,16 @@ void event_starting_action(void)
     printf("Starting the watch.\n");
 }
 
+void event_restopping_action(void)
+{
+    printf("Watch already stopped.\n");
+}
+
+void event_restarting_action(void)
+{
+    printf("Restarting the watch.\n");
+}
+
 typedef struct
 {
     StateEnum state_index;
@@ -46,8 +56,8 @@ struct DigitalStopWatch
 static const State state_table[N_OF_STATES][N_OF_EVENTS] =
 {
     /* EVENT_STOPPING */                        /* EVENT_STARTING */
-    { { STATE_STOPPED, event_stopping_action}, { STATE_STARTED, event_starting_action }}, /* From State: STOPPED */
-    { { STATE_STOPPED, event_stopping_action}, { STATE_STARTED, event_starting_action }}, /* From State: STARTED */
+    { { STATE_STOPPED, event_restopping_action}, { STATE_STARTED, event_starting_action }}, /* From State: STOPPED */
+    { { STATE_STOPPED, event_stopping_action}, { STATE_STARTED, event_restarting_action }}, /* From State: STARTED */
 };
 
 

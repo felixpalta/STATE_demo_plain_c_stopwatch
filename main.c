@@ -6,6 +6,8 @@ int main(void)
 {
     DigitalStopWatch *w = create_watch();
 
+    stop_watch(w);
+
     start_watch(w);
     stop_watch(w);
     stop_watch(w);
